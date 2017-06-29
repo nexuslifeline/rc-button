@@ -1,0 +1,67 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+<dom-module id="rc-button">
+  <template>
+    <style>
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+      /**primary styles here**/
+      paper-button.primary {
+        background-color:  #279B80;
+        border-radius: 5px;
+        height: 58px;
+        min-width: 100px;
+        color: white;
+        font-size: 20px;
+        font-weight: bolder;
+        text-transform: none;
+      }
+      paper-button.primary:hover{
+        background-color:   #31C4A2;
+      }
+      /**secondary styles here**/
+      paper-button.secondary {
+        background-color:   #214F84;
+        border-radius: 5px;
+        height: 42px;
+        min-width: 100px;
+        color: white;
+        font-size: 18px;
+        font-weight: bolder;
+        text-transform: none;
+      }
+      paper-button.secondary:hover{
+        background-color:  #4181CC;
+      }
+
+    </style>
+    <paper-button class$="[[class]]">Save</paper-button>
+  </template>
+
+  <script>
+    /**
+     * `rc-button`
+     * Retriever Communications standard button style.
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class RcButton extends Polymer.Element {
+      static get is() { return 'rc-button'; }
+        static get properties() {
+            return {
+                class : {
+                    type: String
+                }
+            }
+        }
+    }
+
+    window.customElements.define(RcButton.is, RcButton);
+  </script>
+</dom-module>
